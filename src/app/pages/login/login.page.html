@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="login(form)">
+    <ion-row color="primary" justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+        
+  
+        <div text-center padding>
+
+
+          <ion-icon color="secondary" size="large" md="md-contact"></ion-icon>
+          <ion-text color="secondary" size="large">
+            <h3>Member Login</h3>
+          </ion-text>
+
+          <ion-item>
+            <ion-icon md="md-mail"></ion-icon>
+            <ion-input name="email" type="email" placeholder="Email ID" ngModel required>
+            </ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon md="md-lock"></ion-icon>
+            <ion-input name="password" type="password" placeholder="Password" ngModel required>
+            </ion-input>
+          </ion-item>
+        </div>
+
+        <div padding>
+          <ion-button color="primary"size="large" type="submit" [disabled]="form.invalid" expand="block">Login</ion-button>
+        </div>
+        <div padding>
+          <ion-button color="primary"size="small" type="submit">Login as Guest</ion-button>
+        </div>
+        </ion-col>
+    </ion-row>
+</form>
+</ion-content>

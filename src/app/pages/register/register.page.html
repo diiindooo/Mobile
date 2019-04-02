@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      SignUp
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form  #form="ngForm" (ngSubmit)="register(form)">
+
+    <ion-row color="primary" justify-content-center>
+      <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+
+        <div text-center padding>
+         
+         <ion-icon color="secondary" size="large" md="md-contact"></ion-icon>
+          <ion-text color="secondary">
+            <h3>Sign Up</h3>
+          </ion-text>
+
+          <ion-item>
+            <ion-icon md="md-person"></ion-icon>
+            <ion-input  name="name" type="text" placeholder="Name" ngModel required></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon md="md-mail"></ion-icon>
+            <ion-input name="email" type="email" placeholder="Email ID" ngModel required></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-icon md="md-lock"></ion-icon>
+            <ion-input name="password" type="password" placeholder="Password" ngModel required></ion-input>
+          </ion-item>
+          
+          <ion-item>
+            <ion-icon md="md-lock"></ion-icon>
+            <ion-input name="confirm" type="password" placeholder="Password Again" ngModel required></ion-input>
+          </ion-item>
+        </div>
+
+        <ion-button color="primary" size="large" type="submit" [disabled]="form.invalid" expand="block">Register</ion-button>
+        
+      
+      </ion-col>
+    </ion-row>
+</form>
+</ion-content>
