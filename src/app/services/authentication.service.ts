@@ -12,7 +12,7 @@ const TOKEN_KEY = 'Authorization';
   providedIn: 'root'
 })
 export class AuthenticationService {
-  url = '127.0.0.1:5000';
+  url = environment.url;
   user = null;
   authenticationState = new BehaviorSubject(false);
 
@@ -25,17 +25,18 @@ export class AuthenticationService {
   }
 
   login(credentials) {
-    return this.http.post(`https://127.0.0.1:5000/auth/login`, credentials)
+    console.log('email', credentials);
+    return this.http.post(`${this.url}/auth/login`, credentials)
       .pipe(
         tap(res => {
-          this.storage.set(TOKEN_KEY, res['Authorization']);
-          this.user = this.helper.decodeToken(res['Authorization']);
+          // this.storage.set(TOKEN_KEY, res['token']);
+          // this.user = this.helper.decodeToken(res['token']);
           this.authenticationState.next(true);
         }),
-        catchError(e => {
-          this.showAlert(e.error.msg);
-          throw new Error(e);
-        })
+        // catchError(e => {
+        //   this.showAlert(e.error.msg);
+        //   throw new Error(e);
+        // })
       );
   }
 
