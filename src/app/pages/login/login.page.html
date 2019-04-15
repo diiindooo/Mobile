@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit()">
+  <form [formGroup]="credentialsForm" (ngSubmit)="onSubmit(credentialsForm.value)">
     <ion-row color="primary" justify-content-center>
       <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
         
@@ -22,7 +22,7 @@
 
           <ion-item>
             <ion-icon md="md-mail"></ion-icon>
-            <ion-input formControlName="email" type="email" placeholder="Email ID" ngModel required>
+            <ion-input formControlName="email" type="text" placeholder="Email ID" ngModel required>
             </ion-input>
           </ion-item>
 

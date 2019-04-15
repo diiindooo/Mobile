@@ -24,13 +24,13 @@ export class AuthenticationService {
 
   }
 
-  login(credentials) {
-    console.log('email', credentials);
-    return this.http.post(`${this.url}/auth/login`, credentials)
+  login(credentialsForm) {
+    console.log('Data', credentialsForm);
+    return this.http.post<any>(`${this.url}/auth/login`, credentialsForm)
       .pipe(
-        tap(res => {
-          // this.storage.set(TOKEN_KEY, res['token']);
-          // this.user = this.helper.decodeToken(res['token']);
+        tap(credentialsForm => {
+          // this.storage.set(TOKEN_KEY, credentials['token']);
+          // this.user = this.helper.decodeToken(credentials['token']);
           this.authenticationState.next(true);
         }),
         // catchError(e => {

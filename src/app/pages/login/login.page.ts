@@ -15,11 +15,12 @@ export class LoginPage implements OnInit {
 
   ngOnInit() {
     this.credentialsForm = this.formBuilder.group({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(1)])
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(1)]]
     });
   }
   onSubmit() {
+    //console.log(this.credentialsForm);
     this.authService.login(this.credentialsForm.value).subscribe();
   }
   register() {
