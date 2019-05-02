@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'register', loadChildren: './pages/register/register.module#RegisterPageModule' },
   { path: 'dashboard', loadChildren: './members/dashboard/dashboard.module#DashboardPageModule' },
   { path: 'members', canActivate: [AuthGuardService],
-      loadChildren: './members/member-routing.module#MemberRoutingModule'}, 
+      loadChildren: './members/member-routing.module#MemberRoutingModule'},
 ];
 
 @NgModule({

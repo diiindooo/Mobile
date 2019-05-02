@@ -16,6 +16,16 @@ export class DashboardPage implements OnInit {
 
   ngOnInit() {
   }
+
+  tab2selected(){
+    console.log('IM HERE');
+  }
+  
+  tab3selected(){
+    console.log('IM HERE');
+  }
+  
+
   logout(){
     this.authService.logout();
 
